@@ -19,3 +19,6 @@ db.sqlite3
 # Archivos de SSOO
 .DS_Store
 Thumbs.db
+
+# Archivos de media
+media/
