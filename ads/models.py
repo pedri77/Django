@@ -18,6 +18,8 @@ class Ad(models.Model):
     price = models.FloatField()
     image = models.FileField()
     status = models.CharField(max_length=3, choices=STATUS)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    last_modification = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return '{0} ({1})'.format(self.name, self.get_status_display())
