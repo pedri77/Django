@@ -1,7 +1,12 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from ads.models import Ad
 
 
-def hello_world(request):
-    name = request.GET.get('name', 'Unknown user')
-    age = request.GET.get('age', 'unknown age')
-    return HttpResponse('Hello {0}! {0} is {1}.'.format(name, age))
+def home(request):
+    # 1) Obtener los anuncios de la base de datos
+    ads_list = Ad.objects.all()
+
+    # 2) Pasar los anuncios a la plantilla para que ésta los muestre en HTML
+    context = {'ads': ads_list}
+    return render(request, 'ads/home.html', context)

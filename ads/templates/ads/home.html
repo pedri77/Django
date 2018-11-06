@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Pop</title>
+    <style>
+        .ad { display: inline-block; }
+        .ad img { display:block; height: 250px; }
+        .ad strong { display: block; }
+    </style>
+</head>
+<body>
+    <h1>Django Pop</h1>
+    <p>Sell everything that you don't need!</p>
+    <hr>
+    {% for ad in ads %}
+        <a href="#" class="ad">
+            <img src="{{ ad.image.url }}" alt="{{ ad.name }}" title="{{ ad.name }}">
+            <strong>{{ ad.name }} ({{ ad.get_status_display }})</strong>
+            <em>{{ ad.price|floatformat:2 }} €</em>
+        </a>
+    {% endfor %}
+</body>
+</html>
