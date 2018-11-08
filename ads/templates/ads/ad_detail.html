@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{{ ad.name }}</title>
 </head>
 <body>
     <h1>{{ ad.name }}</h1>
+    <p>{{ ad.description }}</p>
+    <div>
+        <img src="{{ ad.image.url }}" alt="{{ ad.name }}" title="{{ ad.name }}" width="600">
+    </div>
+    <p>
+        <strong>Price: {{ ad.price|floatformat:2 }}</strong>
+        <br>
+        <strong>Status: {{ ad.get_status_display }}</strong>
+        <br>
+        <strong>Pub date: {{ ad.pub_date|date:"d/m/Y H:i" }}</strong>
+    </p>
 </body>
 </html>
