@@ -7,13 +7,23 @@
         .ad { display: inline-block; }
         .ad img { display:block; height: 250px; }
         .ad strong { display: block; }
+        .message.error { color: red; }
+        .message.success { color: green; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'login' %}">Login</a>
     </nav>
+
+    {% if messages %}
+        <hr>
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
 
     <hr>
 

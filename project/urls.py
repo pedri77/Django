@@ -19,9 +19,14 @@ from django.contrib import admin
 from django.urls import path
 
 from ads.views import home, ad_detail
+from users.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('ads/<int:ad_pk>', ad_detail, name='ad_detail'),
+
+    path('login', login, name='login'),
+
     path('', home, name='home')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
