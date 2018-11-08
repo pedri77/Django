@@ -22,6 +22,6 @@ from ads.views import home, ad_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ads/<int:ad_id>', ad_detail),
+    path('ads/<int:ad_pk>', ad_detail),
     path('', home)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

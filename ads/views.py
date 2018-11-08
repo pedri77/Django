@@ -14,9 +14,9 @@ def home(request):
     return render(request, 'ads/home.html', context)
 
 
-def ad_detail(request, ad_id):
+def ad_detail(request, ad_pk):
     try:
-        ad = Ad.objects.get(id=ad_id)
+        ad = Ad.objects.get(pk=ad_pk)
         context = {'ad': ad}
         return render(request, 'ads/ad_detail.html', context)
     except Ad.DoesNotExist:
