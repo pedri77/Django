@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block "head_title" %} {{ ad.name }} {% endblock %}
+{% block head_title %} {{ ad.name }} {% endblock %}
 
-{% block "main_title" %} {{ ad.name }} {% endblock %}
+{% block main_title %} {{ ad.name }} {% endblock %}
 
-{% block "main_body" %}
+{% block main_body %}
     <p>{{ ad.description }}</p>
     <div>
         <img src="{{ ad.image.url }}" alt="{{ ad.name }}" title="{{ ad.name }}" width="600">
