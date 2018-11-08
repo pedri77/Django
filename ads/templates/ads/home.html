@@ -18,6 +18,7 @@
             <img src="{{ ad.image.url }}" alt="{{ ad.name }}" title="{{ ad.name }}">
             <strong>{{ ad.name }} ({{ ad.get_status_display }})</strong>
             <em>{{ ad.price|floatformat:2 }} €</em>
+            sold by {{ ad.owner.first_name }} {{ ad.owner.last_name }}
         </a>
     {% endfor %}
 </body>
