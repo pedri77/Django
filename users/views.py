@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login as login_user_in_django
+from django.contrib.auth import authenticate, login as login_user_in_django, logout as finish_user_session
 from django.shortcuts import render, redirect
 
 
@@ -17,3 +17,9 @@ def login(request):
             return redirect('home')
 
     return render(request, 'users/login.html')
+
+
+def logout(request):
+    finish_user_session(request)
+    messages.success(request, 'You have been logged out successfully!')
+    return redirect('login')
