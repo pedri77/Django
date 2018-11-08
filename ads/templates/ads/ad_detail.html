@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ ad.name }}</title>
-</head>
-<body>
-    <h1>{{ ad.name }}</h1>
+{% extends "base.html" %}
+
+{% block "head_title" %} {{ ad.name }} {% endblock %}
+
+{% block "main_title" %} {{ ad.name }} {% endblock %}
+
+{% block "main_body" %}
     <p>{{ ad.description }}</p>
     <div>
         <img src="{{ ad.image.url }}" alt="{{ ad.name }}" title="{{ ad.name }}" width="600">
@@ -19,5 +18,4 @@
         <br>
         <strong>Owner: {{ ad.owner.first_name }} {{ ad.owner.last_name }}</strong>
     </p>
-</body>
-</html>
+{% endblock %}
