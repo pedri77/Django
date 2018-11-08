@@ -16,6 +16,8 @@
         <strong>Status: {{ ad.get_status_display }}</strong>
         <br>
         <strong>Pub date: {{ ad.pub_date|date:"d/m/Y H:i" }}</strong>
+        <br>
+        <strong>Owner: {{ ad.owner.first_name }} {{ ad.owner.last_name }}</strong>
     </p>
 </body>
 </html>
